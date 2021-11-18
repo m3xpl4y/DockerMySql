@@ -5,3 +5,4 @@ global using Microsoft.EntityFrameworkCore;
 global using DockerMySql.Models;
 global using Microsoft.AspNetCore.Mvc;
 global using System.Diagnostics;
+global using System.ComponentModel.DataAnnotations;
