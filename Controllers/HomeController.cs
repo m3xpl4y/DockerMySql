@@ -1,9 +1,5 @@
-﻿using DockerMySql.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿namespace DockerMySql.Controllers;
 
-namespace DockerMySql.Controllers
-{
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -29,4 +25,3 @@ namespace DockerMySql.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-}
