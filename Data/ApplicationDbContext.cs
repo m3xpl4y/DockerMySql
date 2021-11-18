@@ -6,4 +6,6 @@
             : base(options)
         {
         }
-    }
+    public DbSet<Person> Persons { get; set; }
+    public DbSet<Location> Locations { get; set; }
+}
