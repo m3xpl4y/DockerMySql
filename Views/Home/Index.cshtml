@@ -1,8 +1,28 @@
-﻿@{
+﻿@model IEnumerable<PersonLocationViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.FirstName)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.LastName)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Age)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.LocationName)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Age</td>
+                    <td>@item.LocationName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

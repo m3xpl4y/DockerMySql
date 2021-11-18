@@ -1,7 +1,4 @@
-﻿
-using System.Collections.Generic;
-
-namespace DockerMySql.Controllers;
+﻿namespace DockerMySql.Controllers;
 
 public class HomeController : Controller
 {
@@ -31,8 +28,6 @@ public class HomeController : Controller
             };
             model.Append(loopModel);
         }
-
-
         return View(model);
     }
 
