@@ -15,7 +15,7 @@ public class HomeController : Controller
             .Include(x => x.Location)
             .ToListAsync();
 
-        IEnumerable<PersonLocationViewModel> model = null;
+        List<PersonLocationViewModel> model = new List<PersonLocationViewModel>();
 
         foreach (var item in getDataFromDb)
         {
@@ -26,7 +26,7 @@ public class HomeController : Controller
                 Age = item.Age,
                 LocationName = item.Location.LocationName
             };
-            model.Append(loopModel);
+            model.Add(loopModel);
         }
         return View(model);
     }
