@@ -1,4 +1,7 @@
-﻿namespace DockerMySql.Controllers;
+﻿
+using System.Collections.Generic;
+
+namespace DockerMySql.Controllers;
 
 public class HomeController : Controller
 {
@@ -11,9 +14,24 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var model = await _context.Persons
+        var getDataFromDb = await _context.Persons
             .Include(x => x.Location)
             .ToListAsync();
+
+        IEnumerable<PersonLocationViewModel> model = null;
+
+        foreach (var item in getDataFromDb)
+        {
+            var loopModel = new PersonLocationViewModel
+            {
+                FirstName = item.FirstName,
+                LastName = item.LastName,
+                Age = item.Age,
+                LocationName = item.Location.LocationName
+            };
+            model.Append(loopModel);
+        }
+
 
         return View(model);
     }
