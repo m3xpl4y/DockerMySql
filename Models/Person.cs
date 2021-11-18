@@ -1,6 +1,5 @@
-﻿namespace DockerMySql.Models
-{
+﻿namespace DockerMySql.Models;
+
     public class Person
     {
     }
-}

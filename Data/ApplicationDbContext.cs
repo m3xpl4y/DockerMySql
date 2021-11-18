@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿namespace DockerMySql.Data;
 
-namespace DockerMySql.Data
-{
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -11,4 +7,3 @@ namespace DockerMySql.Data
         {
         }
     }
-}
